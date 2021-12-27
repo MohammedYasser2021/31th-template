@@ -1,0 +1,18 @@
+.footer{
+    background-color: #191919;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    .text{
+        @media (max-width: 767px){
+            margin-bottom: 10px;
+        }
+    }
+    .author{
+      span{
+        color: $mainColor;
+        font-weight: bold;
+        font-size: 22px;
+      }
+    }
+}

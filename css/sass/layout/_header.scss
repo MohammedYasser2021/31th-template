@@ -1,0 +1,45 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    transition: background-color 0.3s ease-in-out;
+    &.bg-light{
+        background-color: transparent !important;
+    }
+    &.sticky{
+        background-color: #333 !important;
+    }
+    .navbar-brand{
+        color: $mainColor;
+        &:hover{
+            color: $mainColor
+        }
+        h3{
+            margin: 0;
+        }
+    }
+    .navbar-toggler{
+        background-color: white
+    }
+    .navbar-nav{
+        @media (min-width: 991px) {
+            gap: 15px;
+        }
+        @media (max-width: 991px){
+            background-color: #191919;
+        }
+        .nav-item {
+            .nav-link{
+                color: white;
+                display: block;
+                @include prefixer(transition, 0.3s ease-in-out);
+                &:hover{
+                    background-color: $mainColor
+                }
+                @media (max-width: 991px){
+                    padding: 10px 15px;
+                }
+            }
+        }
+    }
+}

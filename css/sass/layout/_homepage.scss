@@ -1,0 +1,196 @@
+// start home section
+.home{
+    min-height: 700px;
+    position: relative;
+    @include bImage("../../../images/home-bg.jpg");
+    .overlay{
+        @include overlay(#000000, 0.7);
+    }
+    .home-content{
+        @extend %centering;
+        z-index: 2;
+        color: white;
+        .home-desc{
+            h1{
+                letter-spacing: 1px;
+                line-height: 1.2;
+                position: relative;
+                @media (max-width: 991px){
+                    font-size: 25px;
+                }
+                @include responsive (mobile){
+                    font-size: 20px;
+                }
+                &::after{
+                    @extend %line;
+                }
+                &:hover::after{
+                    width: 200px
+                }
+
+            }
+            p{
+                @extend %paragraph;
+            }
+            .btn-warning{
+                background-color: $mainColor;
+                color: white;
+                border-color: $mainColor;
+                &:focus{
+                    @include prefixer(box-shadow, none);
+                }
+            }
+        }
+    }
+    
+}
+// end home section
+
+// start need section 
+.need{
+    background-color: $mainColor;
+    overflow: hidden;
+    @extend %sec-padding;
+    .card{
+        width: 70% !important;
+        background-color: transparent;
+        border: none;
+        h2{
+            color: white;
+            position: relative;
+            @media (max-width: 767px){
+                font-size: 25px;
+            }
+            &::after{
+                @extend %line;
+                background-color: white;
+            }
+            &:hover::after{
+                width: 200px
+            }
+        }
+        .card-text{
+            @extend %paragraph;
+        }
+        .btn{
+            width: 150px;
+        }
+        .btn-warning{
+            background-color: white !important;
+            border-color: white;
+            color: #222;
+            @include prefixer(transition, $mainTransition ease-in-out);
+            &:focus{
+                box-shadow: none !important;
+            }
+            &:hover{
+                background-color: $mainColor !important;
+                color: white;
+            }
+        }
+    }
+}
+// end need section 
+// start services section
+.services{
+    @extend %sec-padding;
+    overflow: hidden;
+    h2{
+        position: relative;
+        margin-bottom: 70px;
+        @media (max-width: 767px){
+            font-size: 25px;
+        }
+        &::after{
+            @extend %line;
+            width: 50px;
+        }
+        &:hover::after{
+            width: 150px
+        }
+    }
+    .box{
+        @extend %box-shadow;
+        padding: 30px;
+        i{
+            color: $mainColor
+        }
+        p{
+            color: #777;
+            line-height: $lineHeight;
+        }
+    }
+}
+// end services section
+// start gallery section
+.gallery{
+    overflow: hidden;
+    .image {
+        height: 250px;
+        overflow: hidden;
+        &::after{
+            content: "";
+            @include overlay($mainColor, 0.7);
+            width: 0;
+            transition: $mainTransition ease-in-out;
+        }
+        &:hover{
+            img{
+                @include prefixer(transform, scale(1.2) rotate(10deg));
+            }
+            &::after{
+                width: 100%
+            }
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            transition: $mainTransition ease-in-out;
+        }
+    }
+}
+// end gallery section
+// start download section
+.download{
+    @extend %sec-padding;
+    p{
+        font-size: 25px;
+    }
+    .btn-primary{
+        transition: $mainTransition ease-in-out;
+        background-color: $mainColor !important;
+        border-color: $mainColor !important;
+        &:focus{
+            box-shadow: none;
+        }
+        &:hover{
+            background-color: white !important;
+            color: $mainColor;
+            border-color: white !important;
+        }
+    }
+}
+// end download section
+// start touch section
+.touch{
+    overflow: hidden;
+    @extend %sec-padding;
+    h2{
+        position: relative;
+        margin-bottom: 30px;
+        &::after{
+            @extend %line;
+        }
+        &:hover::after{
+            width: 150px
+        }
+    }
+    .box{
+        @extend %box-shadow;
+        padding: 30px;
+        i{
+            color: $mainColor
+        }
+    }
+}
+// end touch section
